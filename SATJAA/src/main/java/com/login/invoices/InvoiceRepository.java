@@ -2,12 +2,9 @@ package com.login.invoices;
 
 import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.login.accounts.Account;
-
-public interface InvoiceRepository extends CrudRepository<Invoice, String>
+public interface InvoiceRepository extends JpaRepository<Invoice, Double>
 {
-   public List<Invoice> findByName(String name);
    
 }
