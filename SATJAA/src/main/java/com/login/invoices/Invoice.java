@@ -1,10 +1,10 @@
 package com.login.invoices;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.login.accounts.Account;
 
@@ -12,9 +12,10 @@ import com.login.accounts.Account;
 public class Invoice
 {
    @Id
-   private String id;
-   private String name;
-   private double totalCost;
+   //@GeneratedValue(strategy = GenerationType.SEQUENCE)
+   private Double id;
+   
+   private Double totalCost;
    
    @ManyToOne
    private Account account;
@@ -24,40 +25,29 @@ public class Invoice
   
    }
 
-   public Invoice(String id, String name, double totalCost)
+   public Invoice(Double id, Double totalCost)
    {
       super();
       this.id = id;
-      this.name = name;
       this.totalCost = totalCost;
    }
 
-   public String getId()
+   public Double getId()
    {
       return id;
    }
 
-   public String getName()
-   {
-      return name;
-   }
-
-   public double getTotalCost()
+   public Double getTotalCost()
    {
       return totalCost;
    }
 
-   public void setID(String id)
+   public void setID(Double id)
    {
       this.id = id;
    }
 
-   public void setName(String name)
-   {
-      this.name = name;
-   }
-
-   public void setTotalCost(double totalCost)
+   public void setTotalCost(Double totalCost)
    {
       this.totalCost = totalCost;
    }
