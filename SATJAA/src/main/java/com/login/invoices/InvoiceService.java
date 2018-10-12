@@ -13,18 +13,14 @@ public class InvoiceService
    @Autowired
    private InvoiceRepository invoiceRepository;
    
-   public List<Invoice> getAllInvoices(String id){
+   public List<Invoice> getAllInvoices(Double id){
       List<Invoice> invoices = new ArrayList<>();
       invoiceRepository.findAll().forEach(invoices::add);
       return invoices;
    }
    
-   public Optional<Invoice> getInvoice(String id) {
+   public Optional<Invoice> getInvoice(Double id) {
       return invoiceRepository.findById(id);
-   }
-   
-   public List<Invoice> getInvoiceByName(String name) {
-      return invoiceRepository.findByName(name);
    }
    
    public void addInvoice(Invoice invoice) {
@@ -35,7 +31,7 @@ public class InvoiceService
       invoiceRepository.save(invoice);
    }
    
-   public void deleteInvoice(String id) {
+   public void deleteInvoice(Double id) {
       invoiceRepository.deleteById(id);
    }
    
