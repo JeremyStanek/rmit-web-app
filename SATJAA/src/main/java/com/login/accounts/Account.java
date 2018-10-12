@@ -1,13 +1,17 @@
 package com.login.accounts;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Account
 {
    @Id
-   private String id;
+   //@GeneratedValue(strategy = GenerationType.SEQUENCE)
+   private Double id;
+   
    private String name;
    private String company;
 
@@ -16,7 +20,7 @@ public class Account
   
    }
 
-   public Account(String id, String name, String company)
+   public Account(Double id, String name, String company)
    {
       super();
       this.id = id;
@@ -24,7 +28,7 @@ public class Account
       this.company = company;
    }
 
-   public String getId()
+   public Double getId()
    {
       return id;
    }
@@ -39,7 +43,7 @@ public class Account
       return company;
    }
 
-   public void setID(String id)
+   public void setID(Double id)
    {
       this.id = id;
    }
