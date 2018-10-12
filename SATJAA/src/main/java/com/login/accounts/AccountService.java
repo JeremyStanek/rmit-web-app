@@ -19,7 +19,7 @@ public class AccountService
       return accounts;
    }
    
-   public Optional<Account> getAccount(String id) {
+   public Optional<Account> getAccount(Double id) {
       return accountRepository.findById(id);
    }
    
@@ -27,11 +27,11 @@ public class AccountService
       accountRepository.save(account);
    }
    
-   public void updateAccount(String id, Account account) {
+   public void updateAccount(Double id, Account account) {
       accountRepository.save(account);
    }
    
-   public void deleteAccount(String id) {
+   public void deleteAccount(Double id) {
       accountRepository.deleteById(id);
    }
    
