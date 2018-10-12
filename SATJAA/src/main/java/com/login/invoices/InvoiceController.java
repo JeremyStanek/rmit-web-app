@@ -19,13 +19,13 @@ public class InvoiceController
    private InvoiceService invoiceService;
 
    @RequestMapping("/accounts/{id}/invoices")
-   public List<Invoice> getAllinvoices(@PathVariable String id)
+   public List<Invoice> getAllinvoices(@PathVariable Double id)
    {
       return invoiceService.getAllInvoices(id);
    }
    
    @RequestMapping("/accounts/{accountId}/invoices/{id}")
-   public Optional<Invoice> getInvoice(@PathVariable String id) {
+   public Optional<Invoice> getInvoice(@PathVariable Double id) {
       return invoiceService.getInvoice(id);
    }
    
@@ -40,7 +40,7 @@ public class InvoiceController
    }
    
    @RequestMapping(method=RequestMethod.DELETE, value = "/accounts/{accountId}/invoices/{id}")
-   public void deleteinvoice(@PathVariable String id) {
+   public void deleteinvoice(@PathVariable Double id) {
       invoiceService.deleteInvoice(id);
    }
 
