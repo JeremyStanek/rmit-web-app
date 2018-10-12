@@ -15,14 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class AccountController
 {
-   @Autowired
+   @Autowired  
    private AccountService accountService;
-
-   @RequestMapping("/login")
-   public String login()
-   {
-      return "Please enter your username and password";
-   }
 
    @RequestMapping("/accounts")
    public List<Account> getAllaccounts()
@@ -31,7 +25,7 @@ public class AccountController
    }
    
    @RequestMapping("/accounts/{id}")
-   public Optional<Account> getAccount(@PathVariable String id) {
+   public Optional<Account> getAccount(@PathVariable Double id) {
       return accountService.getAccount(id);
    }
    
@@ -41,12 +35,12 @@ public class AccountController
    }
    
    @RequestMapping(method=RequestMethod.PUT, value = "/accounts/{id}")
-   public void updateaccount(@PathVariable String id, @RequestBody Account account) {
+   public void updateaccount(@PathVariable Double id, @RequestBody Account account) {
       accountService.updateAccount(id, account);
    }
    
    @RequestMapping(method=RequestMethod.DELETE, value = "/accounts/{id}")
-   public void deleteaccount(@PathVariable String id) {
+   public void deleteaccount(@PathVariable Double id) {
       accountService.deleteAccount(id);
    }
 
