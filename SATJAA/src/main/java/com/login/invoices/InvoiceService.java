@@ -27,7 +27,7 @@ public class InvoiceService
       invoiceRepository.save(invoice);
    }
    
-   public void updateInvoice(String id, Invoice invoice) {
+   public void updateInvoice(Double id, Invoice invoice) {
       invoiceRepository.save(invoice);
    }
    
