@@ -1,4 +1,4 @@
-package com.app.invoices;
+package com.login.invoices;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
