@@ -18,29 +18,29 @@ public class InvoiceController
    @Autowired
    private InvoiceService invoiceService;
 
-   @RequestMapping("/accounts/{id}/invoices")
-   public List<Invoice> getAllinvoices(@PathVariable Double id)
+   @RequestMapping("/customers/{id}/invoices")
+   public List<Invoice> getAllInvoices(@PathVariable Double id)
    {
       return invoiceService.getAllInvoices(id);
    }
    
-   @RequestMapping("/accounts/{accountId}/invoices/{id}")
+   @RequestMapping("/customers/{customerId}/invoices/{id}")
    public Optional<Invoice> getInvoice(@PathVariable Double id) {
       return invoiceService.getInvoice(id);
    }
    
-   @RequestMapping(method=RequestMethod.POST, value = "/accounts/{id}/invoices")
-   public void addinvoice(@RequestBody Invoice invoice) {
+   @RequestMapping(method=RequestMethod.POST, value = "/customers/{id}/invoices")
+   public void addInvoice(@RequestBody Invoice invoice) {
       invoiceService.addInvoice(invoice);
    }
    
-   @RequestMapping(method=RequestMethod.PUT, value = "/accounts/{accountId}/invoices/{id}")
-   public void updateinvoice(@PathVariable String id, @RequestBody Invoice invoice) {
+   @RequestMapping(method=RequestMethod.PUT, value = "/customers/{customerId}/invoices/{id}")
+   public void updateInvoice(@PathVariable Double id, @RequestBody Invoice invoice) {
       invoiceService.updateInvoice(id, invoice);
    }
    
-   @RequestMapping(method=RequestMethod.DELETE, value = "/accounts/{accountId}/invoices/{id}")
-   public void deleteinvoice(@PathVariable Double id) {
+   @RequestMapping(method=RequestMethod.DELETE, value = "/customers/{customerId}/invoices/{id}")
+   public void deleteInvoice(@PathVariable Double id) {
       invoiceService.deleteInvoice(id);
    }
 
