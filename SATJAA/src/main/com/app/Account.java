@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Account
+public abstract class Account
 {
    @Id
    //@GeneratedValue(strategy = GenerationType.SEQUENCE)
