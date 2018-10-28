@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 import com.app.customers.Customer;
 
-@Entity
+@Entity(name="Invoice")
 public class Invoice
 {
    @Id
