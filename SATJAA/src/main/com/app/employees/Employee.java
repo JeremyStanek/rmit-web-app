@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import com.app.Account;
 
-@Entity
+@Entity(name="Employee")
 public class Employee extends Account
 {
 
