@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 import com.app.Account;
 
-@Entity
+@Entity(name="Item")
 public class Item
 {
    @Id
